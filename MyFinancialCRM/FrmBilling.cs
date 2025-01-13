@@ -72,11 +72,40 @@ namespace MyFinancialCRM
             dataGridView1.DataSource = values;
         }
 
-        private void btnBankFrm_Click(object sender, EventArgs e)
+        private void NavigateToForm(Form form)
         {
-            FrmBank frmBank = new FrmBank();
-            frmBank.Show();
+            form.Show();
             this.Hide();
+        }
+        private void btnFrmBank_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmBank());
+        }
+        private void btnFrmCategory_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmCategory());
+        }
+        private void btnFrmBilling_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmBilling());
+        }
+        private void btnFrmSpending_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmSpending());
+        }
+        private void btnFrmBankProcessing_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmBankProcessing());
+        }
+
+        private void btnFrmDashboard_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmDashboard());
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

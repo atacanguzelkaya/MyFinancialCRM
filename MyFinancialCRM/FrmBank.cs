@@ -42,12 +42,36 @@ namespace MyFinancialCRM
             var bankProcess5 = db.BankProcesses.OrderByDescending(x => x.BankProcessId).Take(5).Skip(4).FirstOrDefault();
             lblBankProcess5.Text = bankProcess5.Description + " - " + bankProcess5.Amount + " - " + bankProcess5.ProcessDate;
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void NavigateToForm(Form form)
         {
-            FrmBilling frmBilling = new FrmBilling();
-            frmBilling.Show();
+            form.Show();
             this.Hide();
+        }
+        private void btnFrmCategory_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmCategory());
+        }
+        private void btnFrmBilling_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmBilling());
+        }
+        private void btnFrmSpending_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmSpending());
+        }
+        private void btnFrmBankProcessing_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmBankProcessing());
+        }
+
+        private void btnFrmDashboard_Click(object sender, EventArgs e)
+        {
+            NavigateToForm(new FrmDashboard());
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
